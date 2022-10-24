@@ -1,24 +1,14 @@
-# README
+# Il Danese Savaggio
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The documentations of a lost wildling deep in the south
 
-Things you may want to cover:
+* Ruby 3.1.2p20
+* Rails 7.0.4
+* Postgresql
+* Tailwind 3
 
-* Ruby version
+### To initialize a local database
+* rails db:create db:migrate
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### To run test suite
+* bundle exec rspec
