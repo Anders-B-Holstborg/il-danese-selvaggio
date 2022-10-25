@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/my-app
     docker:
-      - image: cimg/ruby:3.1.2
+      - image: cimg/ruby:3.1.2-browsers
         environment:
           BUNDLE_RETRY: 3
           BUNDLE_PATH: vendor/bundle
@@ -28,9 +28,6 @@ jobs:
       - run:
           name: Bundle Install
           command: bundle check || bundle install
-      - run:
-          name: Yarn install
-          command: yarn install --check-files
       - save_cache:
           key: my-app-bundle-v1-{{ checksum "Gemfile.lock" }}
           paths:
