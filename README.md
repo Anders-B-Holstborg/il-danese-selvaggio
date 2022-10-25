@@ -12,3 +12,4 @@ The documentations of a lost wildling deep in the south
 
 ### To run test suite
 * bundle exec rspec
+The continuous integration is handled with CircleCI. See config in '.circleci/config.yml'
