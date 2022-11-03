@@ -12,7 +12,13 @@ jobs:
           RAILS_ENV: test
       - image: circleci/postgres:11-alpine
     steps:
+      - browser-tools/install-browser-tools
       - checkout
+      - run: |
+          ruby --version
+          node --version
+          java --version
+          google-chrome --version
 
       # Install dependencies for Ruby Gems
       - restore_cache:
