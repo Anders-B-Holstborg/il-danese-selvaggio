@@ -3,7 +3,7 @@ orbs:
   browser-tools: circleci/browser-tools@1.4.0
 jobs:
   build:
-    working_directory: ~/my-app
+    working_directory: ~/il-danese-savaggio
     docker:
       - image: cimg/ruby:3.1.2-browsers
       - image: circleci/postgres:11-alpine
@@ -23,10 +23,7 @@ jobs:
           name: Check install
 
       # Install dependencies for Ruby Gems
-      - restore_cache:
-          keys:
-            - my-app-bundle-v1-{{ checksum "Gemfile.lock" }}
-            - my-app-bundle-v1-
+
       - run:
           name: Configure Bundler
           command: |
@@ -37,7 +34,7 @@ jobs:
           name: Bundle Install
           command: bundle check || bundle install
       - save_cache:
-          key: my-app-bundle-v1-{{ checksum "Gemfile.lock" }}
+          key: il-danese-savaggio-bundle-v1-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
 
