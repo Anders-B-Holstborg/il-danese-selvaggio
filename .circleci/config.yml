@@ -13,17 +13,12 @@ jobs:
           DATABASE_URL: postgres://postgres:@localhost:5432/test
           POSTGRES_PASSWORD: postgres
           RAILS_ENV: test
-    steps:
-      - browser-tools/install-chrome
-      - browser-tools/install-chromedriver
-      - run:
-          command: |
-            google-chrome --version
-            chromedriver --version
-          name: Check install
 
       # Install dependencies for Ruby Gems
-
+      - restore_cache:
+          keys:
+            - il-danese-savaggio-bundle-v1-{{ checksum "Gemfile.lock" }}
+            - il-danese-savaggio-bundle-v1-
       - run:
           name: Configure Bundler
           command: |
