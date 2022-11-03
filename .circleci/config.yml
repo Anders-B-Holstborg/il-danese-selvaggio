@@ -1,4 +1,6 @@
 version: 2
+orbs:
+  browser-tools: circleci/browser-tools@1.1
 jobs:
   build:
     working_directory: ~/my-app
@@ -10,15 +12,15 @@ jobs:
           DATABASE_URL: postgres://postgres:@localhost:5432/test
           POSTGRES_PASSWORD: postgres
           RAILS_ENV: test
+        steps:
+          - browser-tools/install-browser-tools
+          - checkout
+          - run: |
+              ruby --version
+              node --version
+              java --version
+              google-chrome --version
       - image: circleci/postgres:11-alpine
-    steps:
-      - browser-tools/install-browser-tools
-      - checkout
-      - run: |
-          ruby --version
-          node --version
-          java --version
-          google-chrome --version
 
       # Install dependencies for Ruby Gems
       - restore_cache:
