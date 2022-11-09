@@ -40,10 +40,20 @@ RSpec.describe Article do
         expect(article.content.as_json).to eql(content_action_text_attributes)
       end
 
+      # TODO: Add thumbnail field
       # it 'has an optional thumbnail image associated' do
       #   thumbnail =
       #   expect(article.thumbnail).to eql(thumbnail)
       # end
+    end
+  end
+
+  describe 'relations' do
+    it 'cannot exist without a user' do
+      user = create(:user)
+
+      expect { described_class.create! }.to raise_error('Validation failed: User must exist')
+      expect(described_class.create!(user:)).to be_truthy
     end
   end
 end
