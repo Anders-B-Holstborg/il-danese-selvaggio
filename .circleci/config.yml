@@ -12,6 +12,7 @@ jobs:
           DATABASE_URL: postgres://postgres:@localhost:5432/test
           POSTGRES_PASSWORD: postgres
           RAILS_ENV: test
+      - image: cimg/postgres:15.3
     steps:
       - checkout
       - browser-tools/install-chrome
