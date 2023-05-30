@@ -21,7 +21,6 @@ jobs:
             google-chrome --version
             chromedriver --version
           name: Check install
-      - checkout
 
       # Install dependencies for Ruby Gems
       - restore_cache:
