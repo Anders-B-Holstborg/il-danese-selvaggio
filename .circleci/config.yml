@@ -10,15 +10,9 @@ jobs:
           BUNDLE_RETRY: 3
           BUNDLE_PATH: vendor/bundle
           DATABASE_URL: postgres://postgres:@localhost:5432/test
-          PGHOST: localhost
-          PGUSER: il-danese-selvaggio
+          POSTGRES_PASSWORD: postgres
           RAILS_ENV: test
-
       - image: cimg/postgres:15.3
-        environment:
-          POSTGRES_USER: il-danese-selvaggio
-          POSTGRES_DB: il-danese-selvaggio_test
-          POSTGRES_PASSWORD: ''
     steps:
       - checkout
       - browser-tools/install-chrome
