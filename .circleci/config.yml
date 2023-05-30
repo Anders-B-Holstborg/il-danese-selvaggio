@@ -1,11 +1,11 @@
-version: '2.1'
+version: 2.1
 orbs:
   browser-tools: circleci/browser-tools@1.4.0
 jobs:
   build:
-    working_directory: ~/il-danese-savaggio
+    working_directory: ~/il-danese-selvaggio
     docker:
-      - image: cimg/ruby:3.1.2-browsers
+      - image: cimg/ruby:3.2.2-browsers
         environment:
           BUNDLE_RETRY: 3
           BUNDLE_PATH: vendor/bundle
@@ -26,8 +26,8 @@ jobs:
       # Install dependencies for Ruby Gems
       - restore_cache:
           keys:
-            - il-danese-savaggio-bundle-v1-{{ checksum "Gemfile.lock" }}
-            - il-danese-savaggio-bundle-v1-
+            - il-danese-selvaggio-bundle-v1-{{ checksum "Gemfile.lock" }}
+            - il-danese-selvaggio-bundle-v1-
       - run:
           name: Configure Bundler
           command: |
