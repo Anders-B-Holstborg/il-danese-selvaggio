@@ -36,3 +36,5 @@
 /.dbschema
 /.rubocop.yml
 /.setup.txt
+
+/ProcfileForeman
