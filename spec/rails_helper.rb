@@ -66,6 +66,8 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  config.include FactoryBot::Syntax::Methods
+
   # https://stackoverflow.com/questions/57319708/how-to-test-actiontext-using-rspec
   config.include ActionText::SystemTestHelper, type: :system
   # fill_in_rich_text_area "page_content", with: "Some content."

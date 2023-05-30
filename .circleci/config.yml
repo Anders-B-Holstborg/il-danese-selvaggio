@@ -14,6 +14,7 @@ jobs:
           RAILS_ENV: test
       - image: cimg/postgres:15.3
     steps:
+      - checkout
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
       - run:
@@ -21,7 +22,6 @@ jobs:
             google-chrome --version
             chromedriver --version
           name: Check install
-      - checkout
 
       # Install dependencies for Ruby Gems
       - restore_cache:
