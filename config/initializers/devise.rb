@@ -129,8 +129,6 @@ Devise.setup do |config|
 
   # Set up a pepper to generate the hashed password.
   # config.pepper = '86fbdf73384df189bc5a3bcd410e1ac5698afe5a531ff83436e7cada3644b19250418b2882c73c96a5a19a293c0776649c1de419050c37c510c0c12f5f37e2a9'
-  # rubocop:enable Layout/LineLength
-
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
 
