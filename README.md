@@ -1,10 +1,10 @@
-# Il Danese Savaggio
+# Il Danese Selvaggio
 
 The documentations of a lost wildling deep in the south
 
-* Ruby 3.1.2p20
-* Rails 7.0.4
-* Postgresql
+* Ruby 3.2.2
+* Rails 7.0.5
+* Postgresql 1.5.3
 * Tailwind 3
 
 
@@ -24,4 +24,4 @@ To enable Tailwind 3s hot reloading, run `rails tailwindcss:watch` in a separate
 
 To run the tests: `bundle exec rspec`
 
-The app is using CircleCI for Continuous Integration, and is not using Continuous Deployment (as Heroku would have my scalp otherwise)
+The app is using CircleCI for Continuous Integration, and is not yet using Continuous Deployment
